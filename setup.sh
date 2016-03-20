@@ -31,6 +31,7 @@ sudo apt-get install mplayer avidemux handbrake
 sudo apt-get install octave git emacs eclipse eclipse-cdt libtool
 sudo apt-get install python-pip python-bottle python-pandas python-pymongo
 sudo apt-get install python3-pip python3-bottle python3-pandas python3-pymongo
+sudo apt-get install python3-bs4
 sudo apt-get install python-virtualenv
 sudo apt-get install ipython ipython-notebook
 sudo apt-get install r-base r-cran-rjava r-cran-xml r-cran-ggplot2
@@ -92,6 +93,10 @@ sudo apt-get install libusb-dev libusb-1.0-0-dev
 sudo apt-get install gqrx-sdr
 sudo apt-get install gpredict
 sudo apt-get install chirp
+#
+# Games
+#
+sudo apt-get install flightgear
 
 #
 # Sublime Text 2
