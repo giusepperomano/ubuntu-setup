@@ -18,15 +18,38 @@ sudo dpkg -i google-chrome-stable_current_i386.deb
 #
 sudo apt-get install liferea
 sudo apt-get install calibre
+sudo apt-get install gimp
+sudo apt-get install mtpaint
+sudo apt-get install dump
+sudo apt-get install whois
+sudo apt-get install screen
 sudo apt-get install lm-sensors conky
+sudo apt-get install gtkterm
+sudo apt-get install xsane
+sudo apt-get install unrar p7zip
 #
-# Multimedia
+# Server applications
 #
+sudo apt-get install openssh-server
+sudo apt-get install apache2
+sudo apt-get install mysql-server
+sudo apt-get install mongodb
+#
+# Sound
+#
+sudo apt-get install cdrdao id3 easytag puddletag
+sudo apt-get install sound-juicer
+#
+# Video
+#
+sudo apt-get install totem-plugins-extras
+sudo apt-get install grilo-plugins-0.2
 sudo apt-get install ubuntu-restricted-extras
 sudo /usr/share/doc/libdvdread4/install-css.sh
-sudo apt-get install mplayer avidemux handbrake
+sudo apt-get install mplayer vlc avidemux handbrake rtmpdump mkvtoolnix
+sudo apt-get install xmltv-util
 #
-# Development
+# Software development
 #
 sudo apt-get install octave git emacs eclipse eclipse-cdt libtool
 sudo apt-get install python-pip python-bottle python-pandas python-pymongo
@@ -40,6 +63,12 @@ sudo apt-get install texlive texlive-lang-italian texlive-fonts-extra
 sudo apt-get install sqlite3
 sudo apt-get install nodejs npm
 sudo apt-get install golang
+sudo apt-get install libapache2-mod-php5 php5-mysql php5-gd
+sudo apt-get install phpmyadmin
+sudo apt-get install qtcreator
+sudo apt-get install gedit-plugins gedit-developer-plugins
+sudo apt-get install emacs
+sudo apt-get install cmake
 #
 # Libraries
 #
@@ -63,18 +92,11 @@ sudo /opt/copy-client/CopyAgent -installOverlay
 #
 sudo apt-get install virtualbox
 sudo apt-get install libvirt-bin
-sudo apt-get install qemu-kvm
+sudo apt-get install qemu qemu-kvm
 sudo apt-get install ubuntu-vm-builder bridge-utils
 sudo apt-get install virt-manager
 sudo dpkg -i /tmp/vagrant_1.8.1_x86_64.deb
 sudo apt-get install simh
-#
-# Server applications
-#
-sudo apt-get install openssh-server
-sudo apt-get install apache2
-sudo apt-get install mysql-server
-sudo apt-get install mongodb
 #
 # Electronics
 #
@@ -93,11 +115,18 @@ sudo apt-get install libusb-dev libusb-1.0-0-dev
 sudo apt-get install gqrx-sdr
 sudo apt-get install gpredict
 sudo apt-get install chirp
+sudo apt-get install xastir
+#
+# Electronic Music
+#
+sudo apt-get install ghostess
 #
 # Games
 #
 sudo apt-get install flightgear
-
+sudo apt-get install wsynth-dssi xsynth-dssi hexter
+sudo apt-get install pulseaudio-module-jack
+sudo apt-get install bristol
 #
 # Sublime Text 2
 #
