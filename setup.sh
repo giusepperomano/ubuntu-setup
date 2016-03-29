@@ -3,6 +3,10 @@
 #
 # Setup script for my Ubuntu desktop computer
 #
+umask 022
+#
+#
+#
 sudo apt-get install gnome-session-fallback
 sudo apt-get tcsh
 # Begin: Install libraries for 32 bit support
@@ -33,7 +37,11 @@ sudo apt-get install unrar p7zip
 sudo apt-get install openssh-server
 sudo apt-get install apache2
 sudo apt-get install mysql-server
-sudo apt-get install mongodb
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+sudo apt-get update
+sudo apt-get install -y mongodb-org
+
 #
 # Sound
 #
@@ -130,11 +138,17 @@ sudo apt-get install bristol
 #
 # Sublime Text 2
 #
-
+#wget https://download.sublimetext.com/Sublime%20Text%202.0.2%20x64.tar.bz2 -O /tmp/sublime2.tar.bz2
+#sudo mkdir /opt/SublimeText2
+#bzcat /tmp/sublime2.tar.bz2 | sudo tar -xv -C /opt/SublimeText2 -f -
 #
 # Sublime Text 3
 #
-
+wget https://download.sublimetext.com/sublime_text_3_build_3103_x64.tar.bz2 -O /tmp/sublime3.tar.bz2
+sudo mkdir /opt/sublime_text_3
+bzcat /tmp/sublime2.tar.bz2 | sudo tar -xv -C /opt/sublime_text_3 -f -
+wget https://packagecontrol.io/Package%20Control.sublime-package -O "/tmp/Package Control.sublime-package"
+mkdir ~/.config/sublime-text-3
 #
 # Atom editor
 #
@@ -165,3 +179,9 @@ sudo apt-get install bristol
 cp dotfiles/dot.profile ~/.profile
 cp dotfiles/dot.cshrc ~/.cshrc
 chmod 644 ~/.profile ~/.cshrc
+#
+#
+#
+mkdir ~/.fonts
+cp -r fonts ~/.fonts
+sudo fc-cache -f -v
