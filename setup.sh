@@ -1,72 +1,69 @@
 #! /bin/bash
 #
-# Setup script for Ubuntu 14.04 desktop computer
+# Post-installation setup script for Ubuntu 14.04 desktop computer
 #
 umask 022
 #
 # Add repositories
 #
-sudo add-apt-repository -y "deb http://dl.google.com/linux/chrome/deb/ stable main"
+sudo add-apt-repository -y "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
+sudo add-apt-repository -y "deb http://linux.dropbox.com/ubuntu $(lsb_release -sc) main"
+sudo add-apt-repository -y ppa:webupd8team/java
 sudo add-apt-repository -y "deb http://repository.spotify.com stable non-free"
+sudo add-apt-repository -y "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse"
+
+#
+# Add signing keys
+#
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+sudo apt-key adv --keyserver pgp.mit.edu --recv-keys 5044912E
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2C19886
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EA312927
 #
 #
+#
+sudo dpkg --add-architecture i386
+#
+# Update
 #
 sudo apt-get -y --force-yes update
 #
+# Install libraries for 32 bit support
 #
+sudo apt-get -y install libc6:i386 libncurses5:i386 libstdc++6:i386
+sudo apt-get -y install zlib1g:i386
 #
-sudo apt-get install gnome-session-fallback
-sudo apt-get tcsh
-# Begin: Install libraries for 32 bit support
-sudo dpkg --add-architecture i386
-sudo apt-get update
-sudo install libc6:i386 libncurses5:i386 libstdc++6:i386
-sudo install zlib1g:i386
-# End: Install libraries for 32 bit support
-sudo dpkg -i google-chrome-stable_current_i386.deb
-
+# Install Gnome flashback, basic applications, tools and utilities
 #
-# Utilities and tools
-#
-sudo apt-get install liferea
-sudo apt-get install calibre
-sudo apt-get install gimp
-sudo apt-get install mtpaint
-sudo apt-get install dump
-sudo apt-get install whois
-sudo apt-get install screen
-sudo apt-get install lm-sensors conky
-sudo apt-get install gtkterm
-sudo apt-get install xsane
-sudo apt-get install unrar p7zip
+sudo apt-get -y install gnome-session-flashback
+sudo apt-get -y install google-chrome-stable
+sudo apt-get -y install tcsh dump whois screen p7zip
+sudo apt-get -y install lm-sensors conky
+sudo apt-get -y install liferea calibre gimp mtpaint xsane gtkterm
 #
 # Server applications
 #
-sudo apt-get install openssh-server
-sudo apt-get install apache2
-sudo apt-get install mysql-server
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
-echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
-sudo apt-get update
-sudo apt-get install -y mongodb-org
-
+sudo apt-get -y install openssh-server
+sudo apt-get -y install apache2
+#sudo apt-get -y install mysql-server *** Asks for root password ***
+sudo apt-get -y install mongodb-org
 #
 # Sound
 #
-sudo apt-get install cdrdao id3 easytag puddletag
-sudo apt-get install sound-juicer
+sudo apt-get -y install cdrdao id3 easytag puddletag sound-juicer
+sudo apt-get -y install spotify-client
 #
 # Video
 #
-sudo apt-get install totem-plugins-extras
-sudo apt-get install grilo-plugins-0.2
-sudo apt-get install ubuntu-restricted-extras
+sudo apt-get -y install totem-plugins-extra grilo-plugins-0.2
+sudo apt-get -y install ubuntu-restricted-extras
 sudo /usr/share/doc/libdvdread4/install-css.sh
-sudo apt-get install mplayer vlc avidemux handbrake rtmpdump mkvtoolnix
-sudo apt-get install xmltv-util
+sudo apt-get -y install mplayer vlc avidemux handbrake rtmpdump mkvtoolnix
+sudo apt-get -y install xmltv-util
 #
-# Software development
+# Development tools
 #
+sudo apt-get install oracle-java7-installer oracle-java7-set-default
 sudo apt-get install octave git emacs eclipse eclipse-cdt libtool
 sudo apt-get install python-pip python-bottle python-pandas python-pymongo
 sudo apt-get install python3-pip python3-bottle python3-pandas python3-pymongo
@@ -96,13 +93,14 @@ sudo apt-get install libjson-glib-dev libwebkitgtk-3.0-dev
 # Cloud Services
 #
 # ** ADD DROPBOX HERE ***
+sudo apt-get install dropbox
 sudo add-apt-repository ppa:nilarimogard/webupd8
 sudo apt-get update
 sudo apt-get install grive
 sudo add-apt-repository ppa:paolorotolo/copy
 sudo apt-get update
-sudo apt-get install copy
-sudo /opt/copy-client/CopyAgent -installOverlay
+#sudo apt-get install copy
+#sudo /opt/copy-client/CopyAgent -installOverlay
 #
 # Virtualization
 #
