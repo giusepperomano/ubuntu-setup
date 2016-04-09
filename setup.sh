@@ -1,12 +1,13 @@
 #! /bin/bash
 #
-# Setup script for my Ubuntu 14.04 desktop computer
+# Setup script for Ubuntu 14.04 desktop computer
 #
 umask 022
 #
 # Add repositories
 #
-sudo apt-add-repository -y "deb http://repository.spotify.com stable non-free"
+sudo add-apt-repository -y "deb http://dl.google.com/linux/chrome/deb/ stable main"
+sudo add-apt-repository -y "deb http://repository.spotify.com stable non-free"
 #
 #
 #
