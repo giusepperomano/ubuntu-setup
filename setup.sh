@@ -1,9 +1,16 @@
 #! /bin/bash
 #
-#
-# Setup script for my Ubuntu desktop computer
+# Setup script for my Ubuntu 14.04 desktop computer
 #
 umask 022
+#
+# Add repositories
+#
+sudo apt-add-repository -y "deb http://repository.spotify.com stable non-free"
+#
+#
+#
+sudo apt-get -y --force-yes update
 #
 #
 #
