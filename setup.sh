@@ -63,32 +63,32 @@ sudo apt-get -y install xmltv-util
 #
 # Development tools
 #
-sudo apt-get install oracle-java7-installer oracle-java7-set-default
-sudo apt-get install octave git emacs eclipse eclipse-cdt libtool
-sudo apt-get install python-pip python-bottle python-pandas python-pymongo
-sudo apt-get install python3-pip python3-bottle python3-pandas python3-pymongo
-sudo apt-get install python3-bs4
-sudo apt-get install python-virtualenv
-sudo apt-get install ipython ipython-notebook
-sudo apt-get install r-base r-cran-rjava r-cran-xml r-cran-ggplot2
-sudo apt-get install gnucash
-sudo apt-get install texlive texlive-lang-italian texlive-fonts-extra
-sudo apt-get install sqlite3
-sudo apt-get install nodejs npm
-sudo apt-get install golang
-sudo apt-get install libapache2-mod-php5 php5-mysql php5-gd
-sudo apt-get install phpmyadmin
-sudo apt-get install qtcreator
-sudo apt-get install gedit-plugins gedit-developer-plugins
-sudo apt-get install emacs
-sudo apt-get install cmake
+sudo apt-get -y install oracle-java7-installer oracle-java7-set-default
+sudo apt-get -y install octave git emacs eclipse eclipse-cdt libtool
+sudo apt-get -y install python-pip python-bottle python-pandas python-pymongo
+sudo apt-get -y install python3-pip python3-bottle python3-pandas python3-pymongo
+sudo apt-get -y install python3-bs4
+sudo apt-get -y install python-virtualenv
+sudo apt-get -y install ipython ipython-notebook
+sudo apt-get -y install r-base r-cran-rjava r-cran-xml r-cran-ggplot2
+sudo apt-get -y install gnucash
+sudo apt-get -y install texlive texlive-lang-italian texlive-fonts-extra
+sudo apt-get -y install sqlite3
+sudo apt-get -y install nodejs npm
+sudo apt-get -y install golang
+sudo apt-get -y install libapache2-mod-php5 php5-mysql php5-gd
+sudo apt-get -y install phpmyadmin
+sudo apt-get -y install qtcreator
+sudo apt-get -y install gedit-plugins gedit-developer-plugins
+sudo apt-get -y install emacs
+sudo apt-get -y install cmake
 #
 # Libraries
 #
-sudo apt-get install libssh2-php libjpeg62 libcurl4-openssl-dev pslib-dev libjsoncpp-dev
-sudo apt-get install libcrypto++-dev libav-tools libglib2.0-dev libsqlite3-dev
-sudo apt-get install libpango1.0-dev libsoup2.4-dev libpeas-dev libxslt1-dev
-sudo apt-get install libjson-glib-dev libwebkitgtk-3.0-dev
+sudo apt-get -y install libssh2-php libjpeg62 libcurl4-openssl-dev pslib-dev libjsoncpp-dev
+sudo apt-get -y install libcrypto++-dev libav-tools libglib2.0-dev libsqlite3-dev
+sudo apt-get -y install libpango1.0-dev libsoup2.4-dev libpeas-dev libxslt1-dev
+sudo apt-get -y install libjson-glib-dev libwebkitgtk-3.0-dev
 #
 # Cloud Services
 #
@@ -158,7 +158,8 @@ mkdir ~/.config/sublime-text-3
 #
 # Atom editor
 #
-
+wget https://atom.io/download/deb -O /tmp/atom-amd64.deb
+sudo dpkg -i /tmp/atom-amd64.deb
 #
 # Android SDK
 #
@@ -179,6 +180,14 @@ mkdir ~/.config/sublime-text-3
 # Wordpress
 #
 
+#
+#
+#
+sudo apt-get -y clean
+#
+#
+#
+gsettings set org.gnome.gnome-panel.layout toplevel-id-list "['top-panel-0']"
 #
 # Setup dotfiles in home directory
 #
