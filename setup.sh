@@ -89,6 +89,7 @@ sudo apt-get -y install libssh2-php libjpeg62 libcurl4-openssl-dev pslib-dev lib
 sudo apt-get -y install libcrypto++-dev libav-tools libglib2.0-dev libsqlite3-dev
 sudo apt-get -y install libpango1.0-dev libsoup2.4-dev libpeas-dev libxslt1-dev
 sudo apt-get -y install libjson-glib-dev libwebkitgtk-3.0-dev
+sudo apt-get -y install libsdl2-ttf-2.0-0
 #
 # Cloud Services
 #
@@ -104,11 +105,12 @@ sudo apt-get update
 #
 # Virtualization
 #
-sudo apt-get install virtualbox
+sudo apt-get -y install virtualbox virtualbox-guest-additions-iso
 sudo apt-get install libvirt-bin
 sudo apt-get install qemu qemu-kvm
 sudo apt-get install ubuntu-vm-builder bridge-utils
 sudo apt-get install virt-manager
+sudo apt-get -y -t trusty-backports install lxd
 sudo dpkg -i /tmp/vagrant_1.8.1_x86_64.deb
 sudo apt-get install simh
 #
