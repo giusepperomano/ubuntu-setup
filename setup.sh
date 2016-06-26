@@ -11,7 +11,8 @@ sudo add-apt-repository -y "deb http://linux.dropbox.com/ubuntu $(lsb_release -s
 sudo add-apt-repository -y ppa:webupd8team/java
 sudo add-apt-repository -y "deb http://repository.spotify.com stable non-free"
 sudo add-apt-repository -y "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse"
-
+sudo add-apt-repository -y ppa:ubuntu-lxc/lxd-stable
+sudo apt-add-repository -y ppa:aims/sagemath
 #
 # Add signing keys
 #
@@ -64,6 +65,7 @@ sudo apt-get -y install xmltv-util
 # Development tools
 #
 sudo apt-get -y install oracle-java7-installer oracle-java7-set-default
+sudo apt-get -y install oracle-java8-installer oracle-java8-set-default
 sudo apt-get -y install octave git emacs eclipse eclipse-cdt libtool
 sudo apt-get -y install python-pip python-bottle python-pandas python-pymongo
 sudo apt-get -y install python3-pip python3-bottle python3-pandas python3-pymongo
@@ -82,6 +84,7 @@ sudo apt-get -y install qtcreator
 sudo apt-get -y install gedit-plugins gedit-developer-plugins
 sudo apt-get -y install emacs
 sudo apt-get -y install cmake
+sudo apt-get -y install sagemath-upstream-binary
 #
 # Libraries
 #
@@ -98,8 +101,8 @@ sudo apt-get install dropbox
 sudo add-apt-repository ppa:nilarimogard/webupd8
 sudo apt-get update
 sudo apt-get install grive
-sudo add-apt-repository ppa:paolorotolo/copy
-sudo apt-get update
+#sudo add-apt-repository ppa:paolorotolo/copy
+#sudo apt-get update
 #sudo apt-get install copy
 #sudo /opt/copy-client/CopyAgent -installOverlay
 #
@@ -110,7 +113,8 @@ sudo apt-get install libvirt-bin
 sudo apt-get install qemu qemu-kvm
 sudo apt-get install ubuntu-vm-builder bridge-utils
 sudo apt-get install virt-manager
-sudo apt-get -y -t trusty-backports install lxd
+sudo apt-get install openxenmanager
+sudo apt-get -y install lxd
 sudo dpkg -i /tmp/vagrant_1.8.1_x86_64.deb
 sudo apt-get install simh
 #
