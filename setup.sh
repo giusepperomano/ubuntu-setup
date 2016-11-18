@@ -139,28 +139,19 @@ sudo apt-get install xastir
 #
 # Electronic Music
 #
+sudo apt-get install pulseaudio-module-jack
+sudo apt-get install wsynth-dssi xsynth-dssi hexter
 sudo apt-get install ghostess
+sudo apt-get install bristol
 #
 # Games
 #
 sudo apt-get install flightgear
-sudo apt-get install wsynth-dssi xsynth-dssi hexter
-sudo apt-get install pulseaudio-module-jack
-sudo apt-get install bristol
-#
-# Sublime Text 2
-#
-#wget https://download.sublimetext.com/Sublime%20Text%202.0.2%20x64.tar.bz2 -O /tmp/sublime2.tar.bz2
-#sudo mkdir /opt/SublimeText2
-#bzcat /tmp/sublime2.tar.bz2 | sudo tar -xv -C /opt/SublimeText2 -f -
 #
 # Sublime Text 3
 #
-wget https://download.sublimetext.com/sublime_text_3_build_3103_x64.tar.bz2 -O /tmp/sublime3.tar.bz2
-sudo mkdir /opt/sublime_text_3
-bzcat /tmp/sublime2.tar.bz2 | sudo tar -xv -C /opt/sublime_text_3 -f -
-wget https://packagecontrol.io/Package%20Control.sublime-package -O "/tmp/Package Control.sublime-package"
-mkdir ~/.config/sublime-text-3
+wget https://download.sublimetext.com/sublime-text_build-3114_amd64.deb -O /tmp/sublime-text_build-3114_amd64.deb
+dpkg -i /tmp/sublime-text_build-3114_amd64.deb
 #
 # Atom editor
 #
