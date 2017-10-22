@@ -80,6 +80,10 @@ sudo apt -y install sublime-text
 #
 
 #
+# Install libraries for 32bit support (required for Android Studio)
+#
+sudo apt -y install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386
+#
 # Word Processing
 #
 sudo apt -y install texlive texlive-lang-italian texlive-fonts-extra
@@ -136,13 +140,11 @@ sudo apt -y install puredata
 #
 sudo apt -y install flightgear
 #
-# Android SDK
-#
-
-#
 # Android Studio
 #
-
+wget -O /tmp/android-studio-ide.zip https://dl.google.com/dl/android/studio/ide-zips/2.3.3.0/android-studio-ide-162.4069837-linux.zip
+sudo unzip -xd /opt /tmp/android-studio-ide.zip
+rm -f /tmp/android-studio-ide.zip
 #
 # Arduino
 #
