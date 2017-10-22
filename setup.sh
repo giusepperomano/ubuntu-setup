@@ -1,162 +1,140 @@
 #! /bin/bash
 #
-# Post-installation setup script for Ubuntu 14.04 desktop computer
+# Post-installation setup script for Ubuntu desktop
+# Tested on Ubuntu 17.10
 #
 umask 022
 #
-# Add repositories
-#
-sudo add-apt-repository -y "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
-sudo add-apt-repository -y "deb http://linux.dropbox.com/ubuntu $(lsb_release -sc) main"
-sudo add-apt-repository -y ppa:webupd8team/java
-sudo add-apt-repository -y "deb http://repository.spotify.com stable non-free"
-sudo add-apt-repository -y "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse"
-sudo add-apt-repository -y ppa:ubuntu-lxc/lxd-stable
-sudo apt-add-repository -y ppa:aims/sagemath
-#
 # Add signing keys
 #
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-sudo apt-key adv --keyserver pgp.mit.edu --recv-keys 5044912E
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2C19886
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EA312927
+wget -qO - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886 0DF731E45CE24F27EEEB1450EFDC8610341D9410
 #
+# Add repositories
 #
-#
-sudo dpkg --add-architecture i386
+sudo apt-add-repository -y "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
+sudo apt-add-repository -y "deb https://download.sublimetext.com/ apt/stable/"
+sudo apt-add-repository -y "deb http://repository.spotify.com stable non-free"
+#sudo apt-add-repository -y ppa:aims/sagemath
 #
 # Update
 #
-sudo apt-get -y --force-yes update
-#
-# Install libraries for 32 bit support
-#
-sudo apt-get -y install libc6:i386 libncurses5:i386 libstdc++6:i386
-sudo apt-get -y install zlib1g:i386
+sudo apt -y update
 #
 # Install Gnome flashback, basic applications, tools and utilities
 #
-sudo apt-get -y install gnome-session-flashback
-sudo apt-get -y install google-chrome-stable
-sudo apt-get -y install tcsh dump whois screen p7zip
-sudo apt-get -y install lm-sensors conky
-sudo apt-get -y install liferea calibre gimp mtpaint xsane gtkterm
+sudo apt -y install gnome-session-flashback gnome-tweek-tool
+sudo apt -y install tcsh whois dump screen p7zip lm-sesnsors
+sudo apt -y install ubuntu-restricted-extras
+#
+# Install Google Chrome
+#
+sudo apt -y install google-chrome-stable
 #
 # Server applications
 #
-sudo apt-get -y install openssh-server
-sudo apt-get -y install apache2
-#sudo apt-get -y install mysql-server *** Asks for root password ***
-sudo apt-get -y install mongodb-org
+sudo apt -y install openssh-server
+sudo apt -y install apache2
+sudo apt -y install mysql-server
 #
 # Sound
 #
-sudo apt-get -y install cdrdao id3 easytag puddletag sound-juicer
-sudo apt-get -y install spotify-client
+sudo apt -y install cdrdao sound-juicer id3
+#sudo apt -y install easytag puddletag
+sudo apt -y install spotify-client
 #
 # Video
 #
-sudo apt-get -y install totem-plugins-extra grilo-plugins-0.2
-sudo apt-get -y install ubuntu-restricted-extras
-sudo /usr/share/doc/libdvdread4/install-css.sh
-sudo apt-get -y install mplayer vlc avidemux handbrake rtmpdump mkvtoolnix
-sudo apt-get -y install xmltv-util
+sudo apt -y install totem-plugins-extra grilo-plugins-0.3
+sudo apt -y install mplayer vlc avidemux handbrake rtmpdump mkvtoolnix openshot
+#
+# Productivity
+#
+sudo apt -y install liferea calibre gimp mtpaint xsane gtkterm
+sudo apt -y install gnucash
+sudo apt -y install redshift redshift-gtk
 #
 # Development tools
 #
-sudo apt-get -y install oracle-java7-installer oracle-java7-set-default
-sudo apt-get -y install oracle-java8-installer oracle-java8-set-default
-sudo apt-get -y install octave git emacs eclipse eclipse-cdt libtool
-sudo apt-get -y install python-pip python-bottle python-pandas python-pymongo
-sudo apt-get -y install python3-pip python3-bottle python3-pandas python3-pymongo
-sudo apt-get -y install python3-bs4
-sudo apt-get -y install python-virtualenv
-sudo apt-get -y install ipython ipython-notebook
-sudo apt-get -y install r-base r-cran-rjava r-cran-xml r-cran-ggplot2
-sudo apt-get -y install gnucash
-sudo apt-get -y install texlive texlive-lang-italian texlive-fonts-extra
-sudo apt-get -y install sqlite3
-sudo apt-get -y install nodejs npm
-sudo apt-get -y install golang
-sudo apt-get -y install libapache2-mod-php5 php5-mysql php5-gd
-sudo apt-get -y install phpmyadmin
-sudo apt-get -y install qtcreator
-sudo apt-get -y install gedit-plugins gedit-developer-plugins
-sudo apt-get -y install emacs
-sudo apt-get -y install cmake
-sudo apt-get -y install sagemath-upstream-binary
+#sudo apt-get -y install oracle-java7-installer oracle-java7-set-default
+#sudo apt-get -y install oracle-java8-installer oracle-java8-set-default
+sudo apt -y install git emacs eclipse eclipse-cdt libtool
+sudo apt -y install python-pip python-bottle python-pandas python-pymongo
+sudo apt -y install python3-pip python3-bottle python3-pandas python3-pymongo python3-bs4
+sudo apt -y install python-virtualenv python3-virtualenv
+sudo apt -y install r-base r-cran-rjava r-cran-xml r-cran-ggplot2
+sudo apt -y install sqlite3
+sudo apt -y install nodejs npm
+sudo apt -y install golang
+sudo apt -y install libapache2-mod-php php-mysql php-gd
+sudo apt -y install phpmyadmin
+sudo apt -y install qtcreator
+sudo apt -y install gedit-plugins gedit-developer-plugins
+sudo apt -y install emacs
+sudo apt -y install cmake
+sudo apt -y install sublime-text
+#sudo apt-get -y install atom
 #
 # Libraries
 #
-sudo apt-get -y install libssh2-php libjpeg62 libcurl4-openssl-dev pslib-dev libjsoncpp-dev
-sudo apt-get -y install libcrypto++-dev libav-tools libglib2.0-dev libsqlite3-dev
-sudo apt-get -y install libpango1.0-dev libsoup2.4-dev libpeas-dev libxslt1-dev
-sudo apt-get -y install libjson-glib-dev libwebkitgtk-3.0-dev
-sudo apt-get -y install libsdl2-ttf-2.0-0
+
+#
+# Word Processing
+#
+sudo apt -y install texlive texlive-lang-italian texlive-fonts-extra
+sudo apt -y install pandoc
 #
 # Cloud Services
 #
-# ** ADD DROPBOX HERE ***
-sudo apt-get install dropbox
-sudo add-apt-repository ppa:nilarimogard/webupd8
-sudo apt-get update
-sudo apt-get install grive
-#sudo add-apt-repository ppa:paolorotolo/copy
-#sudo apt-get update
-#sudo apt-get install copy
-#sudo /opt/copy-client/CopyAgent -installOverlay
+sudo apt -y install nautilus-dropbox
 #
 # Virtualization
 #
-sudo apt-get -y install virtualbox virtualbox-guest-additions-iso
-sudo apt-get install libvirt-bin
-sudo apt-get install qemu qemu-kvm
-sudo apt-get install ubuntu-vm-builder bridge-utils
-sudo apt-get install virt-manager
-sudo apt-get install openxenmanager
-sudo apt-get -y install lxd
-sudo dpkg -i /tmp/vagrant_1.8.1_x86_64.deb
-sudo apt-get install simh
+sudo apt -y install virtualbox virtualbox-guest-additions-iso
+sudo apt -y install libvirt-bin qemu qemu-kvm
+sudo apt -y install ubuntu-vm-builder
+sudo apt -y install virt-manager
+sudo apt -y install simh
+#
+# Science/Maths
+#
+sudo apt -y install octave
+#sudo apt -y install ipython ipython-notebook
+#sudo apt -y install sagemath-upstream-binary
 #
 # Electronics
+# (geda meta-package includes gschem, gnetlist, pcb, gerbv, gtkwave)
+sudo apt -y install geda iverilog
+sudo apt -y install fritzing
+#sudo apt -y install eagle
+sudo apt -y install kicad
+#sudo apt -y install oregano
+sudo apt -y lm4flash
 #
-sudo apt-get install geda
-sudo apt-get install gtkwave
-sudo apt-get install iverilog
-sudo apt-get install fritzing
-sudo apt-get install gcc-arm-none-eabi
-sudo apt-get install arduino arduino-mk
-sudo apt-get install eagle
+# Cross compilation
+#
+sudo apt-get install -y gcc-arm-none-eabi
 #
 # Amateur Radio Applications
 #
-sudo apt-get install gnuradio gnuradio-dev gr-osmosdr rtl-sdr librtlsdr-dev
-sudo apt-get install libusb-dev libusb-1.0-0-dev
-sudo apt-get install gqrx-sdr
-sudo apt-get install gpredict
-sudo apt-get install chirp
-sudo apt-get install xastir
+sudo apt -y install gnuradio gnuradio-dev gr-osmosdr rtl-sdr librtlsdr-dev
+#sudo apt-get -y install libusb-dev libusb-1.0-0-dev
+sudo apt -y install gqrx-sdr
+sudo apt -y install gpredict
+sudo apT -y install chirp
 #
 # Electronic Music
 #
-sudo apt-get install pulseaudio-module-jack
-sudo apt-get install wsynth-dssi xsynth-dssi hexter
-sudo apt-get install ghostess
-sudo apt-get install bristol
+sudo apt -y install pulseaudio-module-jack
+sudo apt -y install wsynth-dssi xsynth-dssi hexter
+sudo apt -y install ghostess
+sudo apt -y install bristol
+sudo apt -y install puredata
 #
 # Games
 #
-sudo apt-get install flightgear
-#
-# Sublime Text 3
-#
-wget https://download.sublimetext.com/sublime-text_build-3114_amd64.deb -O /tmp/sublime-text_build-3114_amd64.deb
-dpkg -i /tmp/sublime-text_build-3114_amd64.deb
-#
-# Atom editor
-#
-wget https://atom.io/download/deb -O /tmp/atom-amd64.deb
-sudo dpkg -i /tmp/atom-amd64.deb
+sudo apt -y install flightgear
 #
 # Android SDK
 #
@@ -166,25 +144,39 @@ sudo dpkg -i /tmp/atom-amd64.deb
 #
 
 #
+# Arduino
+#
+wget -O /tmp/arduino.tar.xz http://arduino.cc/download.php?f=/arduino-1.8.5-linux64.tar.xz
+xzcat /tmp/arduino.tar.xz | sudo tar -xf - -C /opt
+sudo ln -s /opt/arduino-1.8.5 /opt/arduino
+rm -f /tmp/arduino.tar.xz
+#
 # Energia
 #
-
+wget -O /tmp/energia.tar.xz "http://energia.nu/downloads/downloadv4.php?file=energia-1.6.10E18-linux64.tar.xz"
+xzcat /tmp/energia.tar.xz | sudo tar -xf - -C /opt
+sudo ln -s /opt/energia-1.6.10E18 /opt/energia
+rm -f /tmp/energia.tar.xz
 #
 # Processing
 #
+wget -O /tmp/processing.tar.gz "http://download.processing.org/processing-3.3.6-linux64.tgz"
+zcat /tmp/processing.tar.gz | sudo tar -xf - -C /opt
+sudo ln -s /opt/processing-3.3.6 /opt/processing
+rm -f /tmp/processing.tar.gz
+#
+# Altera Quartus
+#
 
 #
-# Wordpress
-#
-
 #
 #
-#
-sudo apt-get -y clean
+sudo apt -y clean
 #
 #
 #
 gsettings set org.gnome.gnome-panel.layout toplevel-id-list "['top-panel-0']"
+gsettings set com.canonical.indicator.session show-real-name-on-panel true
 #
 # Setup dotfiles in home directory
 #
