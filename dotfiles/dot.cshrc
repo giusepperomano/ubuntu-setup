@@ -14,6 +14,8 @@ set nobeep
 
 unset autologout
 
+setenv ARDUINO_DIR /opt/arduino
+setenv ARDMK_DIR /home/joe/Work/Arduino/Arduino-Makefile
+
 alias ls ls -CF
 alias rm rm -i
-
