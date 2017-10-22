@@ -27,6 +27,7 @@ sudo apt -y update
 sudo apt -y install gnome-session-flashback gnome-tweek-tool
 sudo apt -y install tcsh whois dump screen p7zip lm-sesnsors
 sudo apt -y install ubuntu-restricted-extras
+sudo snap install keepassxc
 #
 # Install Google Chrome
 #
@@ -40,8 +41,8 @@ sudo apt -y install mysql-server
 #
 # Sound
 #
-sudo apt -y install cdrdao sound-juicer id3
-#sudo apt -y install easytag puddletag
+sudo apt -y install cdrdao brasero sound-juicer
+sudo apt -y install audacity id3 easytag
 sudo apt -y install spotify-client
 #
 # Video
@@ -108,8 +109,8 @@ sudo apt -y install octave
 #sudo apt -y install sagemath-upstream-binary
 #
 # Electronics
-# (geda meta-package includes gschem, gnetlist, pcb, gerbv, gtkwave)
-sudo apt -y install geda iverilog
+#
+sudo apt -y install geda gtkwave iverilog
 sudo apt -y install fritzing
 #sudo apt -y install eagle
 sudo apt -y install kicad
@@ -177,8 +178,9 @@ sudo apt -y clean
 #
 #
 #
-gsettings set org.gnome.gnome-panel.layout toplevel-id-list "['top-panel-0']"
-gsettings set com.canonical.indicator.session show-real-name-on-panel true
+gsettings set org.gnome.gnome-panel.layout toplevel-id-list "['top-panel']"
+gsettings set org.gnome.desktop.interface clock-show-date true
+#gsettings set com.canonical.indicator.session show-real-name-on-panel true
 #
 # Setup dotfiles in home directory
 #
