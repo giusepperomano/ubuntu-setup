@@ -24,9 +24,10 @@ sudo apt -y update
 #
 # Install Gnome flashback, basic applications, tools and utilities
 #
-sudo apt -y install gnome-session-flashback gnome-tweek-tool
-sudo apt -y install tcsh whois dump screen p7zip lm-sesnsors
+sudo apt -y install gnome-session-flashback gnome-tweak-tool
+sudo apt -y install tcsh whois dump screen p7zip lm-sensors
 sudo apt -y install ubuntu-restricted-extras
+sudo apt -y install nfs-common
 sudo snap install keepassxc
 #
 # Install Google Chrome
@@ -48,7 +49,8 @@ sudo apt -y install spotify-client
 # Video
 #
 sudo apt -y install totem-plugins-extra grilo-plugins-0.3
-sudo apt -y install mplayer vlc avidemux handbrake rtmpdump mkvtoolnix openshot
+sudo apt -y install mplayer vlc handbrake rtmpdump mkvtoolnix openshot
+#sudo apt -y install avidemux
 #
 # Productivity
 #
@@ -72,7 +74,7 @@ sudo apt -y install libapache2-mod-php php-mysql php-gd
 sudo apt -y install phpmyadmin
 sudo apt -y install qtcreator
 sudo apt -y install gedit-plugins gedit-developer-plugins
-sudo apt -y install emacs
+#sudo apt -y install emacs
 sudo apt -y install cmake
 sudo apt -y install sublime-text
 #sudo apt-get -y install atom
@@ -149,7 +151,7 @@ rm -f /tmp/android-studio-ide.zip
 #
 # Arduino
 #
-wget -O /tmp/arduino.tar.xz http://arduino.cc/download.php?f=/arduino-1.8.5-linux64.tar.xz
+wget -O /tmp/arduino.tar.xz "http://arduino.cc/download.php?f=/arduino-1.8.5-linux64.tar.xz"
 xzcat /tmp/arduino.tar.xz | sudo tar -xf - -C /opt
 sudo ln -s /opt/arduino-1.8.5 /opt/arduino
 rm -f /tmp/arduino.tar.xz
