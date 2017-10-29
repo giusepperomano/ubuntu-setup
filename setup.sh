@@ -50,6 +50,7 @@ sudo apt -y install spotify-client
 #
 sudo apt -y install totem-plugins-extra grilo-plugins-0.3
 sudo apt -y install mplayer vlc handbrake rtmpdump mkvtoolnix openshot
+sudo apt -y ffmpeg
 #sudo apt -y install avidemux
 #
 # Productivity
@@ -85,7 +86,10 @@ sudo apt -y install sublime-text
 #
 # Install libraries for 32bit support (required for Android Studio)
 #
-sudo apt -y install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386
+sudo dpkg --add-architecture i386
+sudo apt -y install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386i
+sudo apt -y install zlib1g:i386
+sudo apt -y install libX11-6:i386
 #
 # Word Processing
 #
