@@ -28,6 +28,7 @@ sudo apt -y install gnome-session-flashback gnome-tweak-tool
 sudo apt -y install tcsh whois dump screen p7zip lm-sensors
 sudo apt -y install ubuntu-restricted-extras
 sudo apt -y install nfs-common
+sudo apt -y install pm-utils
 sudo snap install keepassxc
 #
 # Install Google Chrome
