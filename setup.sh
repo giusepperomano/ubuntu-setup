@@ -26,6 +26,7 @@ sudo apt -y update
 #
 sudo apt -y install gnome-session-flashback gnome-tweak-tool
 sudo apt -y install tcsh whois dump screen p7zip lm-sensors
+sudo apt -y install net-tools
 sudo apt -y install ubuntu-restricted-extras
 sudo apt -y install nfs-common
 sudo apt -y install pm-utils
@@ -83,14 +84,13 @@ sudo apt -y install sublime-text
 #
 # Libraries
 #
-
+sudo apt -y install libdbd-mysql
 #
 # Install libraries for 32bit support (required for Android Studio)
 #
 sudo dpkg --add-architecture i386
 sudo apt -y install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386i
 sudo apt -y install zlib1g:i386
-sudo apt -y install libX11-6:i386
 #
 # Word Processing
 #
@@ -182,6 +182,10 @@ rm -f /tmp/processing.tar.gz
 #
 #
 sudo apt -y clean
+#
+# RTL28xx for SDR
+#
+echo "blacklist dvb_usb_rtl28xxu" | sudo tee /etc/modprobe.d/blacklist-rtl28xx.conf
 #
 #
 #
