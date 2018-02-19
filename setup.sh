@@ -13,9 +13,11 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB31
 #
 # Add repositories
 #
+sudo add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
 sudo apt-add-repository -y "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
 sudo apt-add-repository -y "deb https://download.sublimetext.com/ apt/stable/"
 sudo apt-add-repository -y "deb http://repository.spotify.com stable non-free"
+sudo add-apt-repository -y ppa:webupd8team/atom
 #sudo apt-add-repository -y ppa:aims/sagemath
 #
 # Update
@@ -30,6 +32,8 @@ sudo apt -y install net-tools
 sudo apt -y install ubuntu-restricted-extras
 sudo apt -y install nfs-common
 sudo apt -y install pm-utils
+sudo apt -y install adobe-flashplugin
+sudo apt -y install duplicity
 sudo snap install keepassxc
 #
 # Install Google Chrome
@@ -66,7 +70,7 @@ sudo apt -y install redshift redshift-gtk
 #sudo apt-get -y install oracle-java7-installer oracle-java7-set-default
 #sudo apt-get -y install oracle-java8-installer oracle-java8-set-default
 sudo apt -y install git emacs eclipse eclipse-cdt libtool
-sudo apt -y install python-pip python-bottle python-pandas python-pymongo
+sudo apt -y install python-pip python-bottle python-pandas python-pymongo python-m3u8
 sudo apt -y install python3-pip python3-bottle python3-pandas python3-pymongo python3-bs4
 sudo apt -y install python-virtualenv python3-virtualenv
 sudo apt -y install r-base r-cran-rjava r-cran-xml r-cran-ggplot2
@@ -80,7 +84,7 @@ sudo apt -y install gedit-plugins gedit-developer-plugins
 #sudo apt -y install emacs
 sudo apt -y install cmake
 sudo apt -y install sublime-text
-#sudo apt-get -y install atom
+sudo apt -y install atom
 #
 # Libraries
 #
@@ -108,6 +112,7 @@ sudo apt -y install libvirt-bin qemu qemu-kvm
 sudo apt -y install ubuntu-vm-builder
 sudo apt -y install virt-manager
 sudo apt -y install simh
+sudo apt -y install docker.io
 #
 # Science/Maths
 #
@@ -118,7 +123,7 @@ sudo apt -y install octave
 # Electronics
 #
 sudo apt -y install geda gtkwave iverilog
-sudo apt -y install fritzing
+sudo apt -y install fritzing fritzing-parts
 #sudo apt -y install eagle
 sudo apt -y install kicad
 #sudo apt -y install oregano
@@ -142,6 +147,7 @@ sudo apt -y install pulseaudio-module-jack
 sudo apt -y install wsynth-dssi xsynth-dssi hexter
 sudo apt -y install ghostess
 sudo apt -y install bristol
+sudo apt -y install rosegarden timidity
 sudo apt -y install puredata
 #
 # Games
