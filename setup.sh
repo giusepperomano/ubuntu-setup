@@ -105,6 +105,7 @@ sudo apt -y install zlib1g:i386
 sudo apt -y install texlive texlive-lang-italian texlive-fonts-extra
 sudo apt -y install texlive-xetex texlive-luatex texlive-publishers
 sudo apt -y install pandoc
+sudo apt -y install fonts-mplus
 #
 # Cloud Services
 #
@@ -211,14 +212,6 @@ cp dotfiles/dot.profile ~/.profile
 cp dotfiles/dot.cshrc ~/.cshrc
 chmod 644 ~/.profile ~/.cshrc
 #
+# Fonts
 #
-#
-mkdir ~/.fonts
-cp -r fonts ~/.fonts
-wget -O /tmp/fira.zip https://github.com/mozilla/Fira/archive/4.202.zip
-unzip -xd /tmp /tmp/fira.zip
-mkdir ~/.fonts/FiraSans
-cp /tmp/Fira-4.202/ttf/* ~/.fonts/FiraSans
-cp /tmp/Fira-4.202/otf/Fira* ~/.fonts/FiraSans
-rm -rf /tmp/fira.zip /tmp/Fira-4.202
-sudo fc-cache -f -v
+fonts/fonts_setup.sh
