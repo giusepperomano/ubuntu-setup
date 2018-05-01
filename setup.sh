@@ -34,7 +34,9 @@ sudo apt -y install nfs-common
 sudo apt -y install pm-utils
 sudo apt -y install adobe-flashplugin
 sudo apt -y install duplicity
+sudo apt -y install exfat-fuse exfat-utils
 sudo snap install keepassxc
+sudo apt -y install mosquitto-clients
 #
 # Install Google Chrome
 #
@@ -56,7 +58,8 @@ sudo apt -y install spotify-client
 #
 sudo apt -y install totem-plugins-extra grilo-plugins-0.3
 sudo apt -y install mplayer vlc handbrake rtmpdump mkvtoolnix openshot
-sudo apt -y ffmpeg
+sudo apt -y install ffmpeg
+sudo apt -y install w-scan
 #sudo apt -y install avidemux
 #
 # Productivity
@@ -64,6 +67,7 @@ sudo apt -y ffmpeg
 sudo apt -y install liferea calibre gimp mtpaint xsane gtkterm
 sudo apt -y install gnucash
 sudo apt -y install redshift redshift-gtk
+sudo apt -y install glabels
 #
 # Development tools
 #
@@ -73,6 +77,7 @@ sudo apt -y install git emacs eclipse eclipse-cdt libtool
 sudo apt -y install python-pip python-bottle python-pandas python-pymongo python-m3u8
 sudo apt -y install python3-pip python3-bottle python3-pandas python3-pymongo python3-bs4
 sudo apt -y install python-virtualenv python3-virtualenv
+sudo apt -y install jupyter-notebook jupyter-core python-ipykernel
 sudo apt -y install r-base r-cran-rjava r-cran-xml r-cran-ggplot2
 sudo apt -y install sqlite3
 sudo apt -y install nodejs npm
@@ -99,6 +104,7 @@ sudo apt -y install zlib1g:i386
 # Word Processing
 #
 sudo apt -y install texlive texlive-lang-italian texlive-fonts-extra
+sudo apt -y install texlive-xetex texlive-luatex texlive-publishers
 sudo apt -y install pandoc
 #
 # Cloud Services
@@ -139,7 +145,8 @@ sudo apt -y install gnuradio gnuradio-dev gr-osmosdr rtl-sdr librtlsdr-dev
 #sudo apt-get -y install libusb-dev libusb-1.0-0-dev
 sudo apt -y install gqrx-sdr
 sudo apt -y install gpredict
-sudo apT -y install chirp
+sudo apt -y install chirp
+sudo apt -y install qsstv
 #
 # Electronic Music
 #
@@ -156,7 +163,7 @@ sudo apt -y install flightgear
 #
 # Android Studio
 #
-wget -O /tmp/android-studio-ide.zip https://dl.google.com/dl/android/studio/ide-zips/2.3.3.0/android-studio-ide-162.4069837-linux.zip
+wget -O /tmp/android-studio-ide.zip https://dl.google.com/dl/android/studio/ide-zips/3.1.0.16/android-studio-ide-173.4670197-linux.zip
 sudo unzip -xd /opt /tmp/android-studio-ide.zip
 rm -f /tmp/android-studio-ide.zip
 #
@@ -209,4 +216,10 @@ chmod 644 ~/.profile ~/.cshrc
 #
 mkdir ~/.fonts
 cp -r fonts ~/.fonts
+wget -O /tmp/fira.zip https://github.com/mozilla/Fira/archive/4.202.zip
+unzip -xd /tmp /tmp/fira.zip
+mkdir ~/.fonts/FiraSans
+cp /tmp/Fira-4.202/ttf/* ~/.fonts/FiraSans
+cp /tmp/Fira-4.202/otf/Fira* ~/.fonts/FiraSans
+rm -rf /tmp/fira.zip /tmp/Fira-4.202
 sudo fc-cache -f -v
