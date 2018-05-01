@@ -77,7 +77,6 @@ sudo apt -y install git emacs eclipse eclipse-cdt libtool
 sudo apt -y install python-pip python-bottle python-pandas python-pymongo python-m3u8
 sudo apt -y install python3-pip python3-bottle python3-pandas python3-pymongo python3-bs4
 sudo apt -y install python-virtualenv python3-virtualenv
-sudo apt -y install jupyter-notebook jupyter-core python-ipykernel
 sudo apt -y install r-base r-cran-rjava r-cran-xml r-cran-ggplot2
 sudo apt -y install sqlite3
 sudo apt -y install nodejs npm
@@ -123,7 +122,7 @@ sudo apt -y install docker.io
 # Science/Maths
 #
 sudo apt -y install octave
-#sudo apt -y install ipython ipython-notebook
+sudo apt -y install jupyter-notebook jupyter-core python-ipykernel
 #sudo apt -y install sagemath-upstream-binary
 #
 # Electronics
