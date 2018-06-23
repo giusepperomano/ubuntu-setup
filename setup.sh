@@ -18,7 +18,6 @@ sudo apt-add-repository -y "deb [arch=amd64] http://dl.google.com/linux/chrome/d
 sudo apt-add-repository -y "deb https://download.sublimetext.com/ apt/stable/"
 sudo apt-add-repository -y "deb http://repository.spotify.com stable non-free"
 sudo add-apt-repository -y ppa:webupd8team/atom
-#sudo apt-add-repository -y ppa:aims/sagemath
 #
 # Update
 #
@@ -35,7 +34,8 @@ sudo apt -y install pm-utils
 sudo apt -y install adobe-flashplugin
 sudo apt -y install duplicity
 sudo apt -y install exfat-fuse exfat-utils
-sudo snap install keepassxc
+sudo apt -y install keepassxc
+#sudo snap install keepassxc
 sudo apt -y install mosquitto-clients
 #
 # Install Google Chrome
@@ -50,7 +50,7 @@ sudo apt -y install mysql-server
 #
 # Sound
 #
-sudo apt -y install cdrdao brasero sound-juicer
+sudo apt -y install cdrdao brasero sound-juicer alsa-oss
 sudo apt -y install audacity id3 easytag
 sudo apt -y install spotify-client
 #
@@ -85,14 +85,19 @@ sudo apt -y install libapache2-mod-php php-mysql php-gd
 sudo apt -y install phpmyadmin
 sudo apt -y install qtcreator
 sudo apt -y install gedit-plugins gedit-developer-plugins
-#sudo apt -y install emacs
 sudo apt -y install cmake
 sudo apt -y install sublime-text
 sudo apt -y install atom
+pip3 install datascience
+sudo apt -y install qtbase5-dev qt5-qmake qt5-default
+sudo apt -y install qtdeclarative5-dev qtmultimedia5-dev
+sudo apt -y install qml-module-qtquick-controls2 qml-module-qtquick-dialogs qml-module-qtcharts qml-module-qt-labs-settings
 #
 # Libraries
 #
 sudo apt -y install libdbd-mysql
+sudo apt -y install libfaad-dev libsndfile1-dev libsamplerate0-dev
+sudo apt -y libqt5opengl5 libqwt-qt5-dev libqt5charts5-dev
 #
 # Install libraries for 32bit support (required for Android Studio)
 #
@@ -124,7 +129,7 @@ sudo apt -y install docker.io
 #
 sudo apt -y install octave
 sudo apt -y install jupyter-notebook jupyter-core python-ipykernel
-#sudo apt -y install sagemath-upstream-binary
+sudo apt -y install sagemath
 #
 # Electronics
 #
@@ -142,6 +147,7 @@ sudo apt-get install -y gcc-arm-none-eabi
 # Amateur Radio Applications
 #
 sudo apt -y install gnuradio gnuradio-dev gr-osmosdr rtl-sdr librtlsdr-dev
+sudo apt -y install libboost-all-dev
 #sudo apt-get -y install libusb-dev libusb-1.0-0-dev
 sudo apt -y install gqrx-sdr
 sudo apt -y install gpredict
