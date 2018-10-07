@@ -68,6 +68,7 @@ sudo apt -y install liferea calibre gimp mtpaint xsane gtkterm
 sudo apt -y install gnucash
 sudo apt -y install redshift redshift-gtk
 sudo apt -y install glabels
+sudo apt -y install gscan2pdf
 #
 # Development tools
 #
@@ -77,6 +78,7 @@ sudo apt -y install git emacs eclipse eclipse-cdt libtool
 sudo apt -y install python-pip python-bottle python-pandas python-pymongo python-m3u8
 sudo apt -y install python3-pip python3-bottle python3-pandas python3-pymongo python3-bs4
 sudo apt -y install python-virtualenv python3-virtualenv
+sudo apt -y install python-configargparse python3-configargparse
 sudo apt -y install r-base r-cran-rjava r-cran-xml r-cran-ggplot2
 sudo apt -y install sqlite3
 sudo apt -y install nodejs npm
@@ -107,8 +109,12 @@ sudo apt -y install zlib1g:i386
 #
 # Word Processing
 #
-sudo apt -y install texlive texlive-lang-italian texlive-fonts-extra
-sudo apt -y install texlive-xetex texlive-luatex texlive-publishers
+sudo apt -y install texlive texlive-extra-utils
+sudo apt -y install texlive-formats-extra texlive-plain-extra texlive-publishers texlive-publishers-doc texlive-science texlive-science-doc
+sudo apt -y install texlive-fonts-extra
+sudo apt -y install texlive-lang-italian
+sudo apt -y install texlive-xetex texlive-luatex
+sudo apt -y install texlive-metapost
 sudo apt -y install pandoc
 sudo apt -y install fonts-mplus
 #
@@ -133,7 +139,7 @@ sudo apt -y install sagemath
 #
 # Electronics
 #
-sudo apt -y install geda gtkwave iverilog
+sudo apt -y install geda gtkwave iverilog pcb
 sudo apt -y install fritzing fritzing-parts
 #sudo apt -y install eagle
 sudo apt -y install kicad
@@ -142,7 +148,8 @@ sudo apt -y lm4flash
 #
 # Cross compilation
 #
-sudo apt-get install -y gcc-arm-none-eabi
+sudo apt -y install gcc-arm-none-eabi
+sudo apt -y install openocd
 #
 # Amateur Radio Applications
 #
@@ -166,6 +173,12 @@ sudo apt -y install puredata
 # Games
 #
 sudo apt -y install flightgear
+#
+#
+#
+wget -O /tmp/gcc-arm-none-eabi-7-2018-q2-update-linux.tar.bz2 "https://developer.arm.com/-/media/Files/downloads/gnu-rm/7-2018q2/gcc-arm-none-eabi-7-2018-q2-update-linux.tar.bz2?revision=bc2c96c0-14b5-4bb4-9f18-bceb4050fee7?product=GNU%20Arm%20Embedded%20Toolchain,64-bit,,Linux,7-2018-q2-update"
+bzcat /tmp/gcc-arm-none-eabi-7-2018-q2-update-linux.tar.bz2 | sudo tar -xf - -C /opt 
+rm -f /tmp/gcc-arm-none-eabi-7-2018-q2-update-linux.tar.bz2
 #
 # Android Studio
 #
