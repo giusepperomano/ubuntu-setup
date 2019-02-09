@@ -64,7 +64,7 @@ sudo apt -y install w-scan
 #
 # Productivity
 #
-sudo apt -y install liferea calibre gimp mtpaint xsane gtkterm
+sudo apt -y install liferea calibre gimp mtpaint xsane gtkterm exif
 sudo apt -y install gnucash
 sudo apt -y install redshift redshift-gtk
 sudo apt -y install glabels
@@ -99,7 +99,9 @@ sudo apt -y install qml-module-qtquick-controls2 qml-module-qtquick-dialogs qml-
 #
 sudo apt -y install libdbd-mysql
 sudo apt -y install libfaad-dev libsndfile1-dev libsamplerate0-dev
-sudo apt -y libqt5opengl5 libqwt-qt5-dev libqt5charts5-dev
+sudo apt -y install libqt5opengl5 libqwt-qt5-dev libqt5charts5-dev
+# Prerequisites for Grive2 compilation
+sudo apt -y install libgcrypt20-dev libcurl4-openssl-dev libyajl-dev
 #
 # Install libraries for 32bit support (required for Android Studio)
 #
@@ -148,7 +150,7 @@ sudo apt -y lm4flash
 #
 # Cross compilation
 #
-sudo apt -y install gcc-arm-none-eabi
+#sudo apt -y install gcc-arm-none-eabi
 sudo apt -y install openocd
 #
 # Amateur Radio Applications
@@ -169,12 +171,13 @@ sudo apt -y install ghostess
 sudo apt -y install bristol
 sudo apt -y install rosegarden timidity
 sudo apt -y install puredata
+sudo apt -y install zynaddsubfx
 #
 # Games
 #
 sudo apt -y install flightgear
 #
-#
+# GCC 7.3.1 for ARM
 #
 wget -O /tmp/gcc-arm-none-eabi-7-2018-q2-update-linux.tar.bz2 "https://developer.arm.com/-/media/Files/downloads/gnu-rm/7-2018q2/gcc-arm-none-eabi-7-2018-q2-update-linux.tar.bz2?revision=bc2c96c0-14b5-4bb4-9f18-bceb4050fee7?product=GNU%20Arm%20Embedded%20Toolchain,64-bit,,Linux,7-2018-q2-update"
 bzcat /tmp/gcc-arm-none-eabi-7-2018-q2-update-linux.tar.bz2 | sudo tar -xf - -C /opt 
@@ -186,14 +189,14 @@ wget -O /tmp/android-studio-ide.zip https://dl.google.com/dl/android/studio/ide-
 sudo unzip -xd /opt /tmp/android-studio-ide.zip
 rm -f /tmp/android-studio-ide.zip
 #
-# Arduino
+# Arduino IDE
 #
 wget -O /tmp/arduino.tar.xz "http://arduino.cc/download.php?f=/arduino-1.8.5-linux64.tar.xz"
 xzcat /tmp/arduino.tar.xz | sudo tar -xf - -C /opt
 sudo ln -s /opt/arduino-1.8.5 /opt/arduino
 rm -f /tmp/arduino.tar.xz
 #
-# Energia
+# Energia IDE
 #
 wget -O /tmp/energia.tar.xz "http://energia.nu/downloads/downloadv4.php?file=energia-1.6.10E18-linux64.tar.xz"
 xzcat /tmp/energia.tar.xz | sudo tar -xf - -C /opt
