@@ -37,6 +37,7 @@ sudo apt -y install exfat-fuse exfat-utils
 sudo apt -y install keepassxc
 #sudo snap install keepassxc
 sudo apt -y install mosquitto-clients
+sudo apt -y install unison
 #
 # Install Google Chrome
 #
@@ -46,6 +47,7 @@ sudo apt -y install google-chrome-stable
 #
 sudo apt -y install openssh-server
 sudo apt -y install apache2
+sudo apt -y install ssmtp
 sudo apt -y install mysql-server
 #
 # Sound
@@ -147,6 +149,7 @@ sudo apt -y install fritzing fritzing-parts
 sudo apt -y install kicad
 #sudo apt -y install oregano
 sudo apt -y lm4flash
+pip install esphome
 #
 # Cross compilation
 #
@@ -172,10 +175,32 @@ sudo apt -y install bristol
 sudo apt -y install rosegarden timidity
 sudo apt -y install puredata
 sudo apt -y install zynaddsubfx
+sudo apt -y install guitarix
+sudo apt -y install ardour
 #
 # Games
 #
 sudo apt -y install flightgear
+#
+# Flatpak
+#
+#sudo apt -y install flatpak
+#sudo apt -y install gnome-software-plugin-flatpak
+#sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+#sudo flatpak install flathub org.gnome.FeedReader
+#
+# Anbox
+#
+sudo add-apt-repository ppa:morphis/anbox-support
+sudo apt update
+sudo apt install linux-headers-generic anbox-modules-dkms
+sudo snap install --devmode --beta anbox
+#
+# WPS Office
+#
+wget -O /tmp/wps-office_11.1.0.8372_amd64.deb http://kdl.cc.ksosoft.com/wps-community/download/8372/wps-office_11.1.0.8372_amd64.deb
+sudo dpkg -i /tmp/wps-office_11.1.0.8372_amd64.deb
+rm -f /tmp/wps-office_11.1.0.8372_amd64.deb
 #
 # GCC 7.3.1 for ARM
 #
@@ -227,6 +252,13 @@ echo "blacklist dvb_usb_rtl28xxu" | sudo tee /etc/modprobe.d/blacklist-rtl28xx.c
 gsettings set org.gnome.gnome-panel.layout toplevel-id-list "['top-panel']"
 gsettings set org.gnome.desktop.interface clock-show-date true
 #gsettings set com.canonical.indicator.session show-real-name-on-panel true
+#
+#
+sudo cp /etc/security/limits.d/audio.conf.disabled /etc/security/limits.d/audio.conf
+sudo adduser joe kvm
+sudo adduser joe dialout
+sudo adduser joe docker
+sudo usermod -a -G audio joe
 #
 # Setup dotfiles in home directory
 #
