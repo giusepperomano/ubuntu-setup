@@ -9,6 +9,7 @@ umask 022
 #
 wget -qO - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+wget -qO https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886 0DF731E45CE24F27EEEB1450EFDC8610341D9410
 #
 # Add repositories
@@ -17,6 +18,7 @@ sudo add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -sc) pa
 sudo apt-add-repository -y "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
 sudo apt-add-repository -y "deb https://download.sublimetext.com/ apt/stable/"
 sudo apt-add-repository -y "deb http://repository.spotify.com stable non-free"
+sudo add-apt-repository -y "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 sudo add-apt-repository -y ppa:webupd8team/atom
 #
 # Update
@@ -34,8 +36,8 @@ sudo apt -y install pm-utils
 sudo apt -y install adobe-flashplugin
 sudo apt -y install duplicity
 sudo apt -y install exfat-fuse exfat-utils
-sudo apt -y install keepassxc
-#sudo snap install keepassxc
+#sudo apt -y install keepassxc
+sudo apt -y snap install bitwarden bw
 sudo apt -y install mosquitto-clients
 sudo apt -y install unison
 #
@@ -71,12 +73,14 @@ sudo apt -y install gnucash
 sudo apt -y install redshift redshift-gtk
 sudo apt -y install glabels
 sudo apt -y install gscan2pdf
+sudo apt -y install telegram-desktop
+sudo snap install xournalpp
 #
 # Development tools
 #
 #sudo apt-get -y install oracle-java7-installer oracle-java7-set-default
 #sudo apt-get -y install oracle-java8-installer oracle-java8-set-default
-sudo apt -y install git emacs eclipse eclipse-cdt libtool
+sudo apt -y install git emacs libtool
 sudo apt -y install python-pip python-bottle python-pandas python-pymongo python-m3u8
 sudo apt -y install python3-pip python3-bottle python3-pandas python3-pymongo python3-bs4
 sudo apt -y install python-virtualenv python3-virtualenv
@@ -92,16 +96,20 @@ sudo apt -y install gedit-plugins gedit-developer-plugins
 sudo apt -y install cmake
 sudo apt -y install sublime-text
 sudo apt -y install atom
+sudo apt -y install code
+sudo snap install eclipse
 pip3 install datascience
 sudo apt -y install qtbase5-dev qt5-qmake qt5-default
 sudo apt -y install qtdeclarative5-dev qtmultimedia5-dev
 sudo apt -y install qml-module-qtquick-controls2 qml-module-qtquick-dialogs qml-module-qtcharts qml-module-qt-labs-settings
+apt-get install qttools5-dev qttools5-dev-tools libqt5serialport5-dev
 #
 # Libraries
 #
 sudo apt -y install libdbd-mysql
 sudo apt -y install libfaad-dev libsndfile1-dev libsamplerate0-dev
 sudo apt -y install libqt5opengl5 libqwt-qt5-dev libqt5charts5-dev
+sudo apt -y install libudev-dev
 # Prerequisites for Grive2 compilation
 sudo apt -y install libgcrypt20-dev libcurl4-openssl-dev libyajl-dev
 #
@@ -145,7 +153,6 @@ sudo apt -y install sagemath
 #
 sudo apt -y install geda gtkwave iverilog pcb
 sudo apt -y install fritzing fritzing-parts
-#sudo apt -y install eagle
 sudo apt -y install kicad
 #sudo apt -y install oregano
 sudo apt -y lm4flash
@@ -153,7 +160,6 @@ pip install esphome
 #
 # Cross compilation
 #
-#sudo apt -y install gcc-arm-none-eabi
 sudo apt -y install openocd
 #
 # Amateur Radio Applications
@@ -165,18 +171,21 @@ sudo apt -y install gqrx-sdr
 sudo apt -y install gpredict
 sudo apt -y install chirp
 sudo apt -y install qsstv
+sudo apt -y install fldigi
 #
 # Electronic Music
 #
 sudo apt -y install pulseaudio-module-jack
 sudo apt -y install wsynth-dssi xsynth-dssi hexter
-sudo apt -y install ghostess
+sudo apt -y install ghostess dssi-host-jack
 sudo apt -y install bristol
 sudo apt -y install rosegarden timidity
 sudo apt -y install puredata
 sudo apt -y install zynaddsubfx
 sudo apt -y install guitarix
 sudo apt -y install ardour
+sudo apt -y install fluidsynth fluid-soundfont-gm fluid-soundfont-gs qsynth
+sudo apt -y install rakarrack
 #
 # Games
 #
@@ -191,16 +200,27 @@ sudo apt -y install flightgear
 #
 # Anbox
 #
-sudo add-apt-repository ppa:morphis/anbox-support
-sudo apt update
-sudo apt install linux-headers-generic anbox-modules-dkms
-sudo snap install --devmode --beta anbox
+#sudo add-apt-repository ppa:morphis/anbox-support
+#sudo apt update
+#sudo apt install linux-headers-generic anbox-modules-dkms
+#sudo snap install --devmode --beta anbox
 #
 # WPS Office
 #
-wget -O /tmp/wps-office_11.1.0.8372_amd64.deb http://kdl.cc.ksosoft.com/wps-community/download/8372/wps-office_11.1.0.8372_amd64.deb
-sudo dpkg -i /tmp/wps-office_11.1.0.8372_amd64.deb
-rm -f /tmp/wps-office_11.1.0.8372_amd64.deb
+#wget -O /tmp/wps-office_11.1.0.8372_amd64.deb http://kdl.cc.ksosoft.com/wps-community/download/8372/wps-office_11.1.0.8372_amd64.deb
+#sudo dpkg -i /tmp/wps-office_11.1.0.8372_amd64.deb
+#rm -f /tmp/wps-office_11.1.0.8372_amd64.deb
+#
+# Obergrive
+#
+sudo dpkg -i overgrive_3.3.*_all.deb
+sudo apt install -f
+# Node.js
+#
+wget -O /tmp/node-v10.16.3-linux-x64.tar.xz https://nodejs.org/dist/v10.16.3/node-v10.16.3-linux-x64.tar.xz
+xzcat /tmp/node-v10.16.3-linux-x64.tar.xz | sudo tar -xf - -C /opt
+sudo ln -s /opt/node-v10.16.3-linux-x64 /opt/node
+rm -f /tmp/node-v10.16.3-linux-x64.tar.xz
 #
 # GCC 7.3.1 for ARM
 #
@@ -235,9 +255,16 @@ zcat /tmp/processing.tar.gz | sudo tar -xf - -C /opt
 sudo ln -s /opt/processing-3.3.6 /opt/processing
 rm -f /tmp/processing.tar.gz
 #
-# Altera Quartus
+# Eagle (free version from Autodesk)
 #
-
+#
+wget -O /tmp/eagle.tar.gz "https://www.autodesk.com/eagle-download-lin"
+zcat /tmp/eagle.tar.gz | sudo tar -xf - -C /opt
+rm -f /tmp/eagle.tar.gz
+#
+# Altera Quartus Web Edition Version 13.0 SP 1 (For Cyclone II)
+#
+tar -xf Quartus-web-13.0.1.232-linux.tar -C /opt
 #
 #
 #
