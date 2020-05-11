@@ -103,6 +103,7 @@ sudo apt -y install qtbase5-dev qt5-qmake qt5-default
 sudo apt -y install qtdeclarative5-dev qtmultimedia5-dev
 sudo apt -y install qml-module-qtquick-controls2 qml-module-qtquick-dialogs qml-module-qtcharts qml-module-qt-labs-settings
 apt-get install qttools5-dev qttools5-dev-tools libqt5serialport5-dev
+sudo apt -y install python-opencv python3-opencv
 #
 # Libraries
 #
@@ -127,6 +128,7 @@ sudo apt -y install texlive-fonts-extra
 sudo apt -y install texlive-lang-italian
 sudo apt -y install texlive-xetex texlive-luatex
 sudo apt -y install texlive-metapost
+sudo apt -y install latexmk
 sudo apt -y install pandoc
 sudo apt -y install fonts-mplus
 #
